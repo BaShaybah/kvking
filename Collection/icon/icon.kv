@@ -1,0 +1,17 @@
+#:import os os
+<Icon> :
+	size_hint:None,None
+	size:60,60
+	font_size:"25dp"
+	font_name:"assets/font/materialdesign.ttf"
+	text:self.icons.get(self.icon) if self.icon in self.icons.keys() else ""
+	halign:"center"
+	markup:True
+	
+	canvas.before:
+		Color:
+			rgba:[1,1,1,0] if self.icon in self.icons.keys() else [1,1,1,1]
+		RoundedRectangle:
+			pos:self.pos
+			size:self.size
+			source:self.icon

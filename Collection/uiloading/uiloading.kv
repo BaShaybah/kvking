@@ -1,0 +1,21 @@
+<UILoading>:
+	background_color:0,0,0,0
+	FloatLayout:
+		size_hint:None,None
+		size:root.sizell
+		pos_hint:{"center_x":.5,"center_y":.5}
+		
+		canvas.before:
+			Color:
+				rgba:1,1,1,0
+			RoundedRectangle:
+				pos:self.pos
+				size:self.size
+			Color:
+				rgba:root.color
+			Line:
+				circle:(self.center_x,self.center_y,self.width/2,root.angel_st,root.angel_en)
+				width:4
+				
+	
+	

@@ -1,0 +1,13 @@
+#:import subprocess subprocess
+#:import Window kivy.core.window.Window
+#:import Gradient kvdesign.uix.gradient.Gradient 
+#:import PyCompiler kvdesign.uix.pycompiler.PyCompiler
+
+Screen:
+	canvas.before:
+		Color:
+			rgba:1,1,1,1
+		Rectangle:
+			pos:self.pos
+			size:self.size
+	Slide:

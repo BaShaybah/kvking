@@ -1,0 +1,22 @@
+#:import color kivy.utils.get_color_from_hex
+#:import Window kivy.core.window.Window
+<NavDrawer>:
+    canvas.before:
+        Color:
+            rgba:[0,0,0,0.4] if self.active else [0,0,0,0]
+        Rectangle:
+            pos:0,0
+            size:Window.size
+            
+        Color:
+            rgba:1,1,1,1
+        Rectangle:
+            pos:self.pos
+            size:self.size
+    
+    size_hint_x:None
+    width:"300dp"
+    x:0-self.width
+    
+    
+    

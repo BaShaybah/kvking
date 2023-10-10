@@ -1,0 +1,15 @@
+<IconButton>:
+	size_hint:None, None
+	size:"60dp", "60dp"
+	
+	canvas.before:
+		Color:
+			rgba:root.bg_color
+		Ellipse:
+			pos:self.pos
+			size:self.size
+			
+	Icon:
+		color:root.color
+		icon:root.icon
+		pos_hint:{"center_x":.5,"center_y":.5}

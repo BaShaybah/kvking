@@ -1,0 +1,61 @@
+<UIAudioPlayer>:
+    size_hint:0.65,.5
+    pos_hint:{"center_x":0.5, "center_y":0.5}
+    canvas.before:
+        Color:
+            rgba:0.2,0.7,0.4,0.9
+        BoxShadow:
+            pos:self.pos
+            size:self.size
+            offset:0,-3
+            border_radius: [4,4,4,4]
+            spread_radius:-3,0
+            blur_radius:10
+            inset:False
+
+        Color:
+            #rgba:hex("#181f2b")
+        RoundedRectangle:
+            pos:self.pos
+            size:self.size
+            radius:[4,]
+        
+
+    MDFloatLayout:
+        size_hint:None, None
+        size:150,150
+        pos_hint:{"center_x":0.5, "center_y":0.65}
+        canvas:
+            Color:
+                rgba:1,1,1,1
+            RoundedRectangle:
+                pos:self.pos
+                size:self.size
+                source:"assets/img/pacman.jpg"
+
+
+    UISlider:
+        size_hint_x:0.65
+        value:20
+        max:100
+        pos_hint:{"center_x":0.5}
+        y:ftt.top + 20
+
+    MDFloatLayout:
+        id:ftt
+        size_hint:0.65,.1
+        pos_hint:{"center_x":0.5, "center_y":0.16}
+
+        IconButton:
+            icon:"arrow-left"
+            pos_hint:{"center_x":0.1, "center_y":0.5}
+        
+        IconButton:
+            icon:"play"
+            radius:[10]
+            pos_hint:{"center_x":0.5, "center_y":0.5}
+
+        IconButton:
+            icon:"arrow-right"
+            pos_hint:{"center_x":0.9, "center_y":0.5}
+

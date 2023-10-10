@@ -1,0 +1,56 @@
+#: import hex kivy.utils.get_color_from_hex
+
+<IconButton>:
+	size_hint:None, None
+	size:50, 50
+
+	icon:"pencil"
+	pos_hint:{"center_x":.5, "center_y":.5}
+	icon_color:1,1,1,1
+	bg_color:hex("#181f2b")
+	radius:[25,]
+	fg_offset:-2,-2
+	bg_offset:-2,-2
+	bg_el_color:0,0,0,1
+	fg_el_color:0,0,0,1
+	blur_radius:10
+	space:6
+
+
+	canvas.before:
+		Color:
+			rgba:self.bg_el_color
+		BoxShadow:
+			pos:self.pos
+			size:self.size
+			offset:self.fg_offset
+			border_radius: [self.radius[0]] * 4
+			spread_radius:0,0
+			blur_radius:self.blur_radius
+			inset:False
+		Color:
+			rgba:self.bg_color
+		RoundedRectangle:
+			radius:self.radius
+			pos:self.pos
+			size:self.size
+
+		Color:
+			rgba:self.fg_el_color
+		BoxShadow:
+			pos:self.pos[0] + self.space/2 , self.pos[1] + self.space/2
+			size:self.size[0] - self.space , self.size[1] - self.space
+			offset:self.bg_offset
+			border_radius:  [self.radius[0]] * 4
+			spread_radius:0,0
+			blur_radius:self.blur_radius
+			inset:True
+
+	MDIcon:
+		icon:root.icon
+		pos_hint:{"center_x":.5, "center_y":.5}
+		theme_text_color:"Custom"
+		text_color:root.icon_color
+	
+
+

@@ -1,0 +1,47 @@
+#:import get_color_from_hex kivy.utils.get_color_from_hex
+<Slide>:
+  canvas.before:
+    Color:
+      rgba:1,1,1,1 
+    Rectangle:
+      pos:self.pos
+      size:self.size
+      
+  ScrollView:
+    effect_cls:"ScrollEffect"
+    BoxLayout:
+      canvas.before:
+        Color:
+          rgba:1,1,1,1 
+        Rectangle:
+          pos:self.pos
+          size:self.size
+      size_hint_y:None
+      height:tct.height
+      padding:"5dp","0dp"
+      
+      CodeInput:
+        id:txt
+        halign:"right"
+        disabled:True
+        background_color:0,0,0,0
+        text:"\n".join(str(i+1) for i in range(len(tct._lines)))
+        font_name:"assets/font/calibril.ttf"
+        font_size:tct.font_size
+        size_hint:None,None
+        size:"30dp", tct.height
+        
+      CodeInput:
+        id:tct
+        style:"vs"
+        background_color:0,0,0,.04
+        
+        font_size:"16dp"
+        font_name:"assets/font/calibril.ttf"
+        size_hint:1,None
+        height:self.line_height* len(self._lines) + 15
+        on_text:root.text = self.text
+        
+    
+      
+    

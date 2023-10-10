@@ -1,0 +1,39 @@
+#:import subprocess subprocess
+#:import Window kivy.core.window.Window
+<PyCompiler>:
+	canvas.before:
+		Color:
+			rgba:1,1,1,1
+		Rectangle:
+			pos:self.pos
+			size:self.size
+	BoxLayout:
+		orientation:"vertical" 
+		Slide:
+			id:sld
+		BoxLayout:
+			padding:20
+			canvas.before:
+				Color:
+					rgba:0,0,0,.1
+				Rectangle:
+					pos:self.pos
+					size:self.size
+			
+			ScrollView:
+				effect_cls:"ScrollEffect" 
+				BoxLayout:
+					size_hint:None, None
+					size:lbl.texture_size
+					Label:
+						color:0,0,0,1
+						id:lbl
+		
+	IconButton:
+		bg_color:0,.6,.6,1
+		icon:"play"
+		pos:root.width-self.width - 25,"270dp" if sld.ids.tct.focus else "12dp"
+		on_release:
+			open("kiv.py", "w").write(sld.text)
+			lbl.text = subprocess.getoutput("/data/user/0/ru.iiec.pydroid3/files/arm-linux-androideabi/bin/python3 kiv.py")
+			

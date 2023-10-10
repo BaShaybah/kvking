@@ -1,0 +1,27 @@
+<UISlider>:
+
+    horz: self.width * (self.value/self.max)
+    size_hint:1,None
+    height:"10dp"
+
+    canvas:
+        Color:
+            rgba:self.forward if self.value >= 4 else (0,0,0,0)
+        Line:
+            points:self.x,self.center_y,self.x+self.horz-14 if (self.x+self.horz-14)> self.x else self.x,self.center_y
+            width:2
+
+        Color:
+            rgba:self.forward if self.value > 0 else (0,0,0,0.3)
+        Line:
+            circle:(self.x+self.horz,self.center_y, 6, 0, 360)
+            width:2
+
+        Color:
+            rgba:self.backward if self.value <= 96 else (0,0,0,0)
+        Line:
+            points:self.x+self.horz+14 if (self.x+self.horz+14) < self.right else self.right,self.center_y,self.right,self.center_y,
+            width:2
+        
+        
+

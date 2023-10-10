@@ -1,0 +1,144 @@
+<UISwitch>:
+    size_hint:None,None
+    size:"160px", "70px"
+    pos_hint: {"center_x":0.5, "center_y":0.5}
+    text_color : ""
+    active: True
+    canvas.before:
+        Color:
+            rgba:0,0,0,.2  
+        BoxShadow:
+            pos:self.pos
+            size:self.size
+            border_radius:[self.height/2,self.height/2,self.height/2,self.height/2]
+            blur_radius:20
+            offset:0,-6
+        Color:
+            rgba:1,1,1,1
+        RoundedRectangle:
+            pos:self.pos
+            size:self.size
+            radius:[self.height/2,]
+        Color:
+            rgba:0,0,0,.2  
+        BoxShadow:
+            pos:self.pos
+            size:self.size
+            border_radius:[self.height/2,self.height/2,self.height/2,self.height/2]
+            blur_radius:20
+            offset:0,-3
+            inset:True
+        Color:
+            rgba:0.2,0.4,0.8,.8
+        Line:
+            points:[self.x+30,self.center_y,self.right-30,self.center_y]
+            width:8
+        Color:
+            rgba:0,0,0,.8
+        BoxShadow:
+            pos:self.x+22,self.center_y-8
+            size:self.right- self.x - 45, 16
+            border_radius:[self.height/2,self.height/2,self.height/2,self.height/2]
+            blur_radius:20
+            offset:0,-6
+            inset:True
+
+        
+
+    MDLabel:
+        id:togon
+        font_name:"assets/font/Nasalization.ttf"
+        size_hint:None,None
+        size:40, self.texture_size[1]+4
+        text: f"[color={root.text_on}][b][size=15]ON[/b][/size][/color]"
+        halign: "center"
+        pos_hint: {"center_x":1.2, "center_y":0.5}
+        markup: True
+
+        canvas.before:
+            Color:
+                rgba:root.bg_on
+            BoxShadow:
+                pos:self.pos
+                size:self.size
+                border_radius:[10,10,10,10]
+                blur_radius:20
+                offset:0,0
+
+    MDLabel:
+        id:togoff
+        font_name:"assets/font/Nasalization.ttf"
+        size_hint:None,None
+        size:40, self.texture_size[1]+4
+        text: f"[color={root.text_off}][b][size=15]OFF[/b][/size][/color]"
+        halign: "center"
+        pos_hint: {"center_x":-0.2, "center_y":0.5}
+        markup: True
+
+        canvas.before:
+            Color:
+                rgba:root.bg_off
+            BoxShadow:
+                pos:self.pos
+                size:self.size
+                border_radius:[10,10,10,10]
+                blur_radius:20
+                offset:0,0
+
+
+
+    FloatLayout:
+        id:tog
+        size_hint:None, None
+        size:50,50
+        pos_hint: {"center_y":0.5}
+        x:root.x + root._curso
+        canvas.before:
+            Color:
+                rgba:0,0,0,.2  
+            BoxShadow:
+                pos:self.pos
+                size:self.size
+                border_radius:[self.height/2,self.height/2,self.height/2,self.height/2]
+                blur_radius:13
+                offset:0,0
+            Color:
+                rgba:1,1,1,1 
+            RoundedRectangle:
+                pos:self.pos
+                size:self.size
+                radius:[self.height/2,]
+            Color:
+                rgba:0,0,0,.2  
+            BoxShadow:
+                pos:self.pos
+                size:self.size
+                border_radius:[self.height/2,self.height/2,self.height/2,self.height/2]
+                blur_radius:20
+                offset:-3,-3
+                inset:True
+
+        FloatLayout:
+            size_hint:None, None
+            size:30,30
+            pos_hint: {"center_x":0.5, "center_y":0.5}
+            canvas.before:
+                
+                Color:
+                    rgba:1,1,1,1 
+                RoundedRectangle:
+                    pos:self.pos
+                    size:self.size
+                    radius:[self.height/2,]
+                Color:
+                    rgba:0,0,0,.2  
+                BoxShadow:
+                    pos:self.pos
+                    size:self.size
+                    border_radius:[self.height/2,self.height/2,self.height/2,self.height/2]
+                    blur_radius:20
+                    offset:3,-3
+                    inset:True
+                
+
+

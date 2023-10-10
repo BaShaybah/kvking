@@ -1,0 +1,42 @@
+[INFO   ] Logger: Record log in /storage/emulated/0/_MeAsMe/KvKing/.kivy/logs/kivy_23-10-09_16.txt
+[INFO   ] Kivy: v2.0.0
+[INFO   ] Kivy: Installed at "/data/user/0/ru.iiec.pydroid3/files/arm-linux-androideabi/lib/python3.9/site-packages/kivy/__init__.py"
+[INFO   ] Python: v3.9.7 (default, Oct  9 2021, 08:02:40) 
+[GCC 11.1.0]
+[INFO   ] Python: Interpreter at "/data/user/0/ru.iiec.pydroid3/files/arm-linux-androideabi/bin/python3"
+[INFO   ] Factory: 186 symbols loaded
+[INFO   ] Image: Providers: img_tex, img_dds, img_sdl2 (img_pil, img_ffpyplayer ignored)
+[INFO   ] Window: Provider: sdl2
+[INFO   ] GL: Using the "OpenGL ES 2" graphics system
+[INFO   ] GL: Backend used <sdl2>
+[INFO   ] GL: OpenGL version <b'OpenGL ES 3.2 build 1.10@5130912'>
+[INFO   ] GL: OpenGL vendor <b'Imagination Technologies'>
+[INFO   ] GL: OpenGL renderer <b'PowerVR Rogue GE8320'>
+[INFO   ] GL: OpenGL parsed version: 3, 2
+[INFO   ] GL: Texture max size <4096>
+[INFO   ] GL: Texture max units <16>
+[INFO   ] Window: auto add sdl2 input provider
+[INFO   ] Window: virtual keyboard not allowed, single mode, not docked
+[ERROR  ] empty separator
+[WARNING] stderr: Traceback (most recent call last):
+[WARNING] stderr:   File "/storage/emulated/0/_MeAsMe/KvKing/kvdesign/tools/hotreloader/App.py", line 95, in hot_start
+[WARNING] stderr:     imp = str(file).split(str(self.kvtitle))[1].replace(os.path.sep, ".")
+[WARNING] stderr: ValueError: empty separator
+[WARNING] stderr: 
+[WARNING] stderr: During handling of the above exception, another exception occurred:
+[WARNING] stderr: 
+[WARNING] stderr: Traceback (most recent call last):
+[WARNING] stderr:   File "/storage/emulated/0/_MeAsMe/KvKing/main.py", line 26, in <module>
+[WARNING] stderr:     Main().run()
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/arm-linux-androideabi/lib/python3.9/site-packages/kivy/app.py", line 949, in run
+[WARNING] stderr:     self._run_prepare()
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/arm-linux-androideabi/lib/python3.9/site-packages/kivy/app.py", line 944, in _run_prepare
+[WARNING] stderr:     self.dispatch('on_start')
+[WARNING] stderr:   File "kivy/_event.pyx", line 709, in kivy._event.EventDispatcher.dispatch
+[WARNING] stderr:   File "/storage/emulated/0/_MeAsMe/KvKing/kvdesign/tools/hotreloader/App.py", line 54, in on_start
+[WARNING] stderr:     self.hot_start()
+[WARNING] stderr:   File "/storage/emulated/0/_MeAsMe/KvKing/kvdesign/tools/hotreloader/App.py", line 111, in hot_start
+[WARNING] stderr:     self.error_view(e)
+[WARNING] stderr:   File "/storage/emulated/0/_MeAsMe/KvKing/kvdesign/tools/hotreloader/App.py", line 144, in error_view
+[WARNING] stderr:     self.root.clear_widgets()
+[WARNING] stderr: AttributeError: 'NoneType' object has no attribute 'clear_widgets'
